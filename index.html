@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,70 +7,182 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="background-grid"></div>
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">JS</div>
+        <div class="nav-links">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="resume.html" class="nav-link">Resume</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+
     <div class="container">
-      <header class="hero">
-        <h1>Jake Stanfield</h1>
-        <p class="tagline">IT Support Specialist | Azure Enthusiast</p>
+      <header class="hero" id="home">
+        <div class="hero-content">
+          <div class="status-badge">Available for opportunities</div>
+          <h1 class="glitch" data-text="Jake Stanfield">Jake Stanfield</h1>
+          <p class="tagline">
+            Cloud Engineer | IT Support Specialist | Azure Enthusiast
+          </p>
+          <div class="hero-buttons">
+            <a href="resume.html" class="btn btn-primary">View Resume</a>
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+          </div>
+        </div>
       </header>
 
-      <section class="intro">
-        <h2>Welcome</h2>
-        <p>
-          Hi, I'm Jake! I'm a Technical Support Specialist with a passion for
-          cloud technologies and automation. Currently working with Microsoft
-          Azure, Active Directory, and enterprise IT systems at Ignyte
-          Insurance.
-        </p>
-        <p>
-          I'm actively developing my cloud engineering skills through hands-on
-          Azure projects and pursuing certifications in cloud administration.
-        </p>
+      <section class="intro section-fade-in">
+        <div class="section-header">
+          <h2>About Me</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="intro-content">
+          <p>
+            Hi, I'm Jake! I'm a Technical Support Specialist with a passion for
+            cloud technologies and automation. Currently working with Microsoft
+            Azure, Active Directory, and enterprise IT systems at Ignyte
+            Insurance.
+          </p>
+          <p>
+            I'm actively developing my cloud engineering skills through hands-on
+            Azure projects and pursuing certifications in cloud administration.
+          </p>
+        </div>
       </section>
 
-      <section class="quick-links">
-        <h2>Quick Links</h2>
+      <section class="quick-links section-fade-in">
+        <div class="section-header">
+          <h2>Connect</h2>
+          <div class="section-line"></div>
+        </div>
         <div class="link-grid">
           <a href="resume.html" class="link-card">
-            <h3>View My Resume</h3>
+            <div class="card-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                ></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h3>Resume</h3>
+            <p>View my experience and technical skills</p>
           </a>
           <a
             href="https://github.com/JakeStanfield"
             target="_blank"
             class="link-card"
           >
+            <div class="card-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                ></path>
+              </svg>
+            </div>
             <h3>GitHub</h3>
+            <p>Explore my projects and code</p>
           </a>
           <a
             href="https://www.linkedin.com/in/jake-stanfield-227a40313/"
             target="_blank"
             class="link-card"
           >
+            <div class="card-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </div>
             <h3>LinkedIn</h3>
+            <p>Connect with me professionally</p>
           </a>
         </div>
       </section>
 
-      <section class="current-focus">
-        <h2>What I'm Working On</h2>
-        <ul>
-          <li>Building cloud infrastructure projects with Azure</li>
-          <li>Completing the Azure Cloud Resume Challenge</li>
-          <li>Automating IT workflows and improving documentation</li>
-          <li>Studying for advanced Azure certifications</li>
-        </ul>
+      <section class="current-focus section-fade-in">
+        <div class="section-header">
+          <h2>Current Focus</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="focus-grid">
+          <div class="focus-item">
+            <p>Building cloud infrastructure projects with Azure</p>
+          </div>
+          <div class="focus-item">
+            <p>Completing the Azure Cloud Resume Challenge</p>
+          </div>
+          <div class="focus-item">
+            <p>Automating IT workflows and improving documentation</p>
+          </div>
+          <div class="focus-item">
+            <p>Studying for advanced Azure certifications</p>
+          </div>
+        </div>
       </section>
 
-      <section class="visitor-counter">
-        <p class="counter-text">
-          Page Visitors: <span id="visitor-count">Loading...</span>
-        </p>
+      <section class="visitor-counter section-fade-in">
+        <div class="counter-card">
+          <div class="counter-label">Total Visitors</div>
+          <div class="counter-display">
+            <span id="visitor-count" class="counter-number">0</span>
+          </div>
+        </div>
       </section>
 
-      <footer>
-        <p>
-          © 2025 Jake Stanfield |
-          <a href="mailto:jstanfd1229@gmail.com">jstanfd1229@gmail.com</a>
-        </p>
+      <footer id="contact">
+        <div class="footer-content">
+          <p class="footer-text">Let's build something together</p>
+          <a href="mailto:jstanfd1229@gmail.com" class="footer-email"
+            >jstanfd1229@gmail.com</a
+          >
+          <div class="footer-social">
+            <a
+              href="https://github.com/JakeStanfield"
+              target="_blank"
+              class="social-link"
+              >GitHub</a
+            >
+            <span class="separator">•</span>
+            <a
+              href="https://www.linkedin.com/in/jake-stanfield-227a40313/"
+              target="_blank"
+              class="social-link"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
       </footer>
     </div>
 
