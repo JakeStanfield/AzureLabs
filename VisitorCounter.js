@@ -1,15 +1,16 @@
-// Visitor Counter - Will connect to Azure Function API later
-// For now, this is a placeholder that shows the structure
+// Visitor Counter - Connects to Azure Function API
 
 async function updateVisitorCount() {
+    const countElement = document.getElementById('visitor-count');
+    
     try {
-        // TODO: Replace with your Azure Function URL
-        // const apiUrl = 'https://your-function-app.azurewebsites.net/api/GetVisitorCount';
+        // Replace with your actual Azure Function URL after deployment
+        // Format: https://YOUR-FUNCTION-APP-NAME.azurewebsites.net/api/GetVisitorCount
+        const apiUrl = 'resume-counter-api-c6cecmbug0hkgyec.eastus-01.azurewebsites.net';
         
-        // Placeholder - simulates API call
-        // When you deploy your Azure Function, uncomment the code below:
+        // Show loading state
+        countElement.textContent = 'Loading...';
         
-        /*
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
@@ -18,21 +19,36 @@ async function updateVisitorCount() {
         });
         
         if (!response.ok) {
-            throw new Error('Failed to fetch visitor count');
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
         
         const data = await response.json();
-        document.getElementById('visitor-count').textContent = data.count;
-        */
         
-        // Temporary placeholder display
-        document.getElementById('visitor-count').textContent = '---';
-        console.log('Visitor counter ready - waiting for Azure Function API');
+        // Animate the counter (optional but looks cool)
+        animateCount(countElement, data.count);
         
     } catch (error) {
         console.error('Error updating visitor count:', error);
-        document.getElementById('visitor-count').textContent = 'Error';
+        countElement.textContent = 'Unable to load';
+        countElement.style.color = '#888';
     }
+}
+
+// Optional: Animate the counter numbers
+function animateCount(element, targetCount) {
+    let currentCount = 0;
+    const increment = Math.ceil(targetCount / 20);
+    const duration = 1000; // 1 second
+    const stepTime = duration / 20;
+    
+    const timer = setInterval(() => {
+        currentCount += increment;
+        if (currentCount >= targetCount) {
+            currentCount = targetCount;
+            clearInterval(timer);
+        }
+        element.textContent = currentCount;
+    }, stepTime);
 }
 
 // Run when page loads
