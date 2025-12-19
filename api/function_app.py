@@ -39,7 +39,11 @@ def get_and_increment_count():
 
 
 @app.function_name(name="GetVisitorCount")
-@app.route(route="GetVisitorCount", methods=["GET", "POST", "OPTIONS"])
+@app.route(
+    route="GetVisitorCount",
+    methods=["GET", "POST", "OPTIONS"],
+    auth_level=func.AuthLevel.ANONYMOUS  
+)
 def get_visitor_count(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Visitor counter function triggered')
     

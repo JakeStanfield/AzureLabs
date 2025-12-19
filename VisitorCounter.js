@@ -6,7 +6,7 @@ async function updateVisitorCount() {
     try {
         // Replace with your actual Azure Function URL after deployment
         // Format: https://YOUR-FUNCTION-APP-NAME.azurewebsites.net/api/GetVisitorCount
-        const apiUrl = 'https://resume-counter-api-c6cecmbug0hkgyec.eastus-01.azurewebsites.net/';
+        const apiUrl = 'https://resume-counter-api-c6cecmbug0hkgyec.eastus-01.azurewebsites.net/api/getvisitorcount';
         
         // Show loading state
         countElement.textContent = 'Loading...';
