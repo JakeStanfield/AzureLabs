@@ -1,0 +1,19 @@
+{
+  "Name": "VM Restart Operator",
+  "IsCustom": true,
+  "Description": "Can view and restart virtual machines. Cannot start, stop, delete, or modify VMs or networking.",
+  "Actions": [
+    "Microsoft.Compute/virtualMachines/read",
+    "Microsoft.Compute/virtualMachines/instanceView/read",
+    "Microsoft.Compute/virtualMachines/restart/action",
+    "Microsoft.Network/networkInterfaces/read",
+    "Microsoft.Resources/subscriptions/resourceGroups/read",
+    "Microsoft.Compute/virtualMachines/start/action"
+  ],
+  "NotActions": [],
+  "DataActions": [],
+  "NotDataActions": [],
+  "AssignableScopes": [
+    "/subscriptions/e634b1bc-c065-4d25-b656-edd0bd26a6df/resourceGroups/keystone-prod-rg"
+  ]
+}
