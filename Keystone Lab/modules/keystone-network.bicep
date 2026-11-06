@@ -55,7 +55,8 @@ resource dataNsg 'Microsoft.Network/networkSecurityGroups@2023-11-01' = {
   properties: {
     securityRules: [
       {
-        name: 'Allow-SMB-SQL-From-Web'
+        // Renaming a rule = delete + recreate, which is fine on a redeploy.
+        name: 'Allow-HTTPS-SMB-SQL-From-Web'
         properties: {
           priority: 100
           direction: 'Inbound'
@@ -65,7 +66,8 @@ resource dataNsg 'Microsoft.Network/networkSecurityGroups@2023-11-01' = {
           sourcePortRange: '*'
           destinationAddressPrefix: dataSubnetPrefix
           destinationPortRanges: [
-            '445'  // SMB / file shares
+            '443'  // Blob private endpoint (HTTPS)
+            '445'  // SMB - Azure Files private endpoint / file servers
             '1433' // SQL Server
           ]
         }
@@ -114,6 +116,10 @@ resource vnet 'Microsoft.Network/virtualNetworks@2023-11-01' = {
           networkSecurityGroup: {
             id: dataNsg.id
           }
+          // Private endpoints live in this subnet. By default NSG rules are
+          // IGNORED for private endpoint traffic - this makes the NSG apply,
+          // so the deny-all above really does protect the storage endpoints.
+          privateEndpointNetworkPolicies: 'NetworkSecurityGroupEnabled'
         }
       }
     ]
